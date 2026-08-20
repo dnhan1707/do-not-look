@@ -1,0 +1,61 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# ========================================
+# GLOBAL (Applies to all folders)
+# ========================================
+node_modules/
+.DS_Store
+*.pem
+.env
+.env*.local
+.env.test
+
+# ========================================
+# FRONTEND (Expo / React Native)
+# ========================================
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native folders (Un-anchored to work inside /first-and-only)
+ios/
+android/
+
+# Native files
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug & Logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# TypeScript
+*.tsbuildinfo
+
+# ========================================
+# BACKEND (Go)
+# ========================================
+# Binaries and compiled files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Common Go build/tmp directories
+backend/bin/
+backend/tmp/
+backend/build/
