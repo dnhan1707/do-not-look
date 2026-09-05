@@ -1,17 +1,8 @@
-import models
-from contextlib import asynccontextmanager
-from database import engine, Base
 from fastapi import FastAPI, HTTPException, Depends, Header
 from schema import AccountCreate, AccountResponse, AccountLogin
 from controller.account_controller import AccountController
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-    yield
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 @app.post("/signup", response_model=AccountResponse)
 async def signup(

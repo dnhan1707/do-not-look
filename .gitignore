@@ -44,19 +44,16 @@ yarn-error.*
 *.tsbuildinfo
 
 # ========================================
-# BACKEND (Go)
+# BACKEND (Python)
 # ========================================
-# Binaries and compiled files
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
-*__pycache__
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+backend/.venv/
 
-# Common Go build/tmp directories
+# Local build and temporary output
 backend/bin/
 backend/tmp/
 backend/build/

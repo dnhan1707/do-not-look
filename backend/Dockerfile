@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8000
 
 # Run the production server
-CMD ["fastapi", "run", "app.py", "--port", "8000"]
+CMD ["sh", "-c", "alembic upgrade head && fastapi run app.py --port 8000"]
