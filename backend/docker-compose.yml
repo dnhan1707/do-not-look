@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: fun_project_db
     ports:
       - "5432:5432"
     volumes:
@@ -20,7 +20,6 @@ services:
       - db
     environment:
       # Pass the connection string to your API
-      DATABASE_URL: postgresql://myuser:mypassword@db:5432/mydatabase
-
+      DATABASE_URL: postgresql+asyncpg://myuser:mypassword@db:5432/fun_project_db
 volumes:
   postgres_data:
