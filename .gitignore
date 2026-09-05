@@ -54,6 +54,7 @@ yarn-error.*
 *.dylib
 *.test
 *.out
+*__pycache__
 
 # Common Go build/tmp directories
 backend/bin/

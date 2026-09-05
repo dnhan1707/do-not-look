@@ -7,14 +7,18 @@ app = FastAPI()
 @app.post("/signup", response_model=AccountResponse)
 async def signup(
     account: AccountCreate,
-    controller: AccountController = Depends()
+    controller: AccountController = Depends(),
 ):
-    response = await controller.signup(account)
-    
-    if not response:
+    was_saved = await controller.signup(account)
+
+    if not was_saved:
         raise HTTPException(status_code=400, detail="Account Not Created")
-        
-    return account
+
+    return AccountResponse(
+        first_name=account.first_name,
+        last_name=account.last_name,
+        phone_number=account.phone_number,
+    )
 
 @app.post("/login")
 def login(credentials: AccountLogin):
